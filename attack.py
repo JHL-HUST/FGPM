@@ -277,17 +277,14 @@ def main(argv=None):
         if not os.path.exists('adv_samples'):
             os.makedirs('adv_samples')
         current_time = str(int(time.time()))
-        save_path = os.path.join(
-            FLAGS.model_dir,
-            "adv_samples/{}-{}-{}-{}-{}-{}.txt".format(
+        save_path = "adv_samples/{}-{}-{}-{}-{}-{}.txt".format(
                 FLAGS.recipe,
                 FLAGS.data,
                 FLAGS.nn_type,
                 FLAGS.train_type,
                 FLAGS.time,
                 FLAGS.step,
-            ),
-        )
+            )
         save_file = open(save_path, "a", encoding="utf-8")
         save_file.write(output_flags_log(FLAGS))
 
